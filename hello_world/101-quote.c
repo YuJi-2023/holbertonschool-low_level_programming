@@ -1,7 +1,11 @@
 #include <stdio.h>
 #include <unistd.h>
+/**
+ * main - Entry point
+ * Description: and that piece of art is useful
+ * Return: 1
+ */
 int main(void)
-/*main value should be an intiger*/
 {
 	write(1, "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n", 59);
 	return (1);
