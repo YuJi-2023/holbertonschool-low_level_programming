@@ -8,6 +8,7 @@ int main(void)
 {
 	int i = '0';
 	int j = '0';
+	int k = 0;
 
 	while (i <= '9')
 	{
@@ -17,15 +18,16 @@ int main(void)
 		{
 			if (i < j)
 			{
+				if (k > 0)
+				{
+					putchar(',');
+					putchar(' ');
+				}
 			putchar(i);
 			putchar(j);
-				if (i < '8')
-				{
-				putchar(',');
-				putchar(' ');
-				}
 			}
 			j = j + 1;
+			k = 1;
 		}
 	i = i + 1;
 	}
