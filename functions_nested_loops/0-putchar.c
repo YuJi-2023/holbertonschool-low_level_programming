@@ -9,7 +9,7 @@ int main(void)
 	char task0[] = "_putchar";
 	int pose = 0;
 
-	while (pose < 9)
+	while (pose < 8)
 	{
 		_putchar(task0[pose]);
 		pose = pose + 1;
