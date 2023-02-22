@@ -3,7 +3,7 @@
 /**
  * print_alphabet - writes alphabet in lowercase 10 times
  */
-void print_alphabet(void)
+void print_alphabet_x10(void)
 {
 	char alpha = 'a';
 	int count = 0;
