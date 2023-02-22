@@ -2,14 +2,14 @@
 
 /**
  * _isalpha - check for alphabetic character
- * @c: accept intiger input
- * Return: 1 (if true); otherwise 0
+ * @c: inpurt parameter of a number
+ * Return: if alpha is an alphabetic character, return value is 1; otherwise 0
  */
 int _isalpha(int c)
 {
 	int alpha = c;
 
-	if ((alpha >= 65 && alpha <= 90) || (alpha >= 97 && alpha <= 122))
+	if ((alpha >= 'A' && alpha <= 'Z') || (alpha >= 'a' && alpha <= 'z'))
 	{
 		return (1);
 	}
