@@ -2,14 +2,14 @@
 
 /**
  * _islower - check for lowercase character
- * @c: accept intiger input
- * Return: 1 (if true); otherwise 0
+ * @c: input parameter
+ * Return: 1 (if c is a lowercase character); 0 (if c is not)
  */
 int _islower(int c)
 {
 	int alpha = c;
 
-	if (alpha >= 97 && alpha <= 122)
+	if (alpha >= 'a' && alpha <= 'z')
 	{
 		return (1);
 	}
