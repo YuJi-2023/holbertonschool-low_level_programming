@@ -15,11 +15,25 @@ void times_table(void)
 			int result = a * b;
 			int d1 = result / 10;
 			int d2 = result % 10;
-
-			_putchar(d1 + '0');
-			_putchar(d2 + '0');
-			_putchar(',');
-			_putchar(' ');
+			
+			if (b == 0)
+			{
+				_putchar('0');
+			}
+			else
+			{
+				_putchar(',');
+				_putchar(' ');
+				if (d1 == 0)
+				{
+					_putchar(' ');
+				}
+				else
+				{
+					_putchar(d1 + '0');
+				}
+				_putchar(d2 + '0');
+			}
 			b = b + 1;
 		}
 			_putchar('\n');
