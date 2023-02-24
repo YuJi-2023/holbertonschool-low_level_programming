@@ -19,19 +19,20 @@ int main(void)
 
 		if (i == 0)
 		{
-			printf("%s ", "Fizz");
+			printf("%s", "Fizz");
 		}
 		if (j == 0)
 		{
-			printf("%s ", "Buzz");
+			printf("%s", "Buzz");
 		}
-		if (i == 0 && j == 0)
-		{
-			printf("%s ", "FizzBuzz");
-		}
+
 		if (i != 0 && j != 0)
 		{
 			printf("%d ", n);
+		}
+		else
+		{
+			printf(" ");
 		}
 		n = n + 1;
 	}
