@@ -5,7 +5,6 @@
  * n%3=0 - print Fizz;
  * n%5=0 - print Buzz;
  * n%3=0 && n%5=0 - print fizzbuzz
- * @n:the inpurt parameter integer
  * Return: the value of int n
  */
 int main(void)
@@ -28,9 +27,10 @@ int main(void)
 
 		if (i != 0 && j != 0)
 		{
-			printf("%d ", n);
+			printf("%d", n);
 		}
-		else
+		
+		if (n != 100)
 		{
 			printf(" ");
 		}
