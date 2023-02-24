@@ -8,9 +8,9 @@
  * @n:the inpurt parameter integer
  * Return: the value of int n
  */
-int main(int n)
+int main(void)
 {
-	n = 1;
+	int n = 1;
 
 	while (n <= 100)
 	{
@@ -32,4 +32,5 @@ int main(int n)
 		n = n + 1;
 	}
 	putchar('\n');
+	return (0);
 }
