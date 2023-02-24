@@ -5,9 +5,9 @@ NAME = school #the name of the executable
 
 all: NAME
 
-NAME: SRC m.h OBJ
-	${CC} main.c school.c -o school
+NAME: SRC
+       
+SRC: m.h OBJ
+	${CC} main.c school.c -o schooL
 
-SRC: main.c school.c
-
-OBJ: $(wildcard *.o)
+OBJ:$(wildcard *.o)	
