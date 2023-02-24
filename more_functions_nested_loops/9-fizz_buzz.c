@@ -27,7 +27,7 @@ int main(void)
 		if (i != 0 && j != 0)
 		{
 			printf("%d", n);
-		}	
+		}
 		if (n != 100)
 		{
 			printf(" ");
