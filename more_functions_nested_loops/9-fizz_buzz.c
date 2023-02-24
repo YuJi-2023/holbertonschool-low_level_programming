@@ -24,12 +24,10 @@ int main(void)
 		{
 			printf("%s", "Buzz");
 		}
-
 		if (i != 0 && j != 0)
 		{
 			printf("%d", n);
-		}
-		
+		}	
 		if (n != 100)
 		{
 			printf(" ");
