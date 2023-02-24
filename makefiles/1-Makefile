@@ -1,5 +1,5 @@
-CC := gcc
-SRC := $(wildcard *.c)
+CC = gcc #the compiler to be used
+SRC = main.c school.c #files with .c extension
 
 all: school
 school: school.c m.h main.c
