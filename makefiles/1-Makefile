@@ -1,7 +1,6 @@
 CC = gcc #the compiler to be used
 SRC = main.c school.c #files with .c extension
 
-all: school
-school: school.c m.h main.c
-	${CC} main.c school.c -o school
+all:
+	${CC} $(SRC) -o school
 	
