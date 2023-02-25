@@ -1,13 +1,18 @@
 CC = gcc #the compiler to be used
+
 SRC = main.c school.c #files with .c extension
+
 OBJ = $(wildcard *.o) #files with .o extension
+
 NAME = school #the name of the executable
 
 all: NAME
 
-NAME: SRC
-       
-SRC: m.h OBJ
-	${CC} main.c school.c -o schooL
+NAME: OBJ
+	${CC} main.o school.o -o school
 
-OBJ:$(wildcard *.o)	
+OBJ: SRC
+	${CC} -c -o school.o school.c
+
+SRC: 
+	${CC} -c -o main.o main.c
