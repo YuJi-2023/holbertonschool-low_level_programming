@@ -6,7 +6,5 @@ OBJ = $(SRC:.c=.o) #files with .o extension
 
 NAME = school #the name of the executable
 
-all: $(NAME)
-
-$(NAME): $(OBJ)
-	${CC} $(SRC) -o $(NAME)
+all: $(OBJ)
+	${CC} $(OBJ) -o $(NAME)
