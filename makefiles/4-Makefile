@@ -1,0 +1,21 @@
+CC = gcc #the compiler to be used
+
+SRC = main.c school.c #files with .c extension
+
+OBJ = $(SRC:.c=.o) #files with .o extension
+
+NAME = school
+
+RM = rm -f
+
+CFLAGS = -Wall -Werror -Wextra -pedantic
+
+all: $(OBJ)
+	${CC} $(OBJ) -o $(NAME)
+clean:
+	$(RM) *.swp *~ $(NAME)
+oclean:
+	$(RM) $(OBJ)
+fclean: clean oclean
+
+re: fclean all
