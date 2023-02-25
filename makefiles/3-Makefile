@@ -6,5 +6,14 @@ OBJ = $(SRC:.c=.o) #files with .o extension
 
 NAME = school
 
+RM = rm -f
+
 all: $(OBJ)
-	$(CC) $(OBJ) -o $(NAME)
+	${CC} $(OBJ) -o $(NAME)
+clean:
+	$(RM) *.swp *~ $(NAME)
+oclean:
+	$(RM) $(OBJ)
+fclean:
+	$(RM) *.swp *~ $(NAME) $(OBJ)
+re: fclean alL
