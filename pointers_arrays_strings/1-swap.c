@@ -1,19 +1,17 @@
 #include "main.h"
 /**
  * swap_int - swaps the values of two integers
- * @p: takes the input parameter1  (address of the int)
- * @q: takes the input parameter2  (address of the int)
+ * @a: takes the input parameter1  (address of the int)
+ * @b: takes the input parameter2  (address of the int)
  * Return
  */
-void swap_int(int *p, int *q)
+void swap_int(int *a, int *b)
 {
-	int a;
-	int b;
+	int i;
+	int j;
 
-	a = *p;
-	b = *q;
-	*p = b;
-	*q = a;
-	p = &b;
-	q = &a;
+	i = *a;
+	j = *b;
+	*a = j;
+	*b = i;
 }
