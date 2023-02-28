@@ -7,13 +7,12 @@
 void puts2(char *str)
 {
 	int len = 0;
+	int n = 0;
 
 	while (str[len] != '\0')/*'\0'is the end of the string*/
 	{
 		len = len + 1;
 	}
-
-	int n = 0;
 
 	while (n < len)
 	{
