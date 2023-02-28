@@ -7,7 +7,7 @@
  */
 void print_rev(char *str)
 {
-	int len = 0;/*get the length of the input string*/
+	int len = 1;/*get the length of the input string*/
 
 	while (*str != '\0')/*'\0'is the end of the string*/
 	{
@@ -15,11 +15,11 @@ void print_rev(char *str)
 		str = str + 1;/*at the end of the loop, str points to the last char*/
 	}
 
-	while (len + 1 >= 0)
+	while (len > 1)
 	{
-		_putchar(*str);
 		len = len - 1;
 		str = str - 1;
+		_putchar(*str);
 	}
 	_putchar('\n');
 }
