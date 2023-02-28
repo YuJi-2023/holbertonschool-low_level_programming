@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 /**
  * print_rev - print out a string in reverse
  * @str: input parameter of a char-typed pointer
@@ -14,7 +15,7 @@ void print_rev(char *str)
 		str = str + 1;/*at the end of the loop, str points to the last char*/
 	}
 
-	while (len >= 0)
+	while (len + 1 >= 0)
 	{
 		_putchar(*str);
 		len = len - 1;
