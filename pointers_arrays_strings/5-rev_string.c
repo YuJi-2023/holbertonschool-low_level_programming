@@ -7,18 +7,21 @@
 void rev_string(char *s)
 {
 	int len = 0;
+	char *first;
+	char *last;
+	char a;
 
 	while (s[len] != '\0')/*'\0'is the end of the string*/
 	{
 		len = len + 1;
 	}
 
-	char *first = s;
-	char *last = s + len - 1;
+	*first = s;
+	*last = s + len - 1;
 
 	while (first < last)
 	{
-		char a = *first;
+		a = *first;
 		*first = *last;
 		*last = a;
 
