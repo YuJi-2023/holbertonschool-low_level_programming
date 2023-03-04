@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * _strncpy - copy the string pointed to by src to dest--with at most n bytes
+ * _memcpy - cop n bytes from src memory area to dest memory area
  * @dest: the input dest pointer
  * @src: the input src pointer
  * @n: the number to by copied
@@ -12,7 +12,7 @@ char *_memcpy(char *dest, char *src, unsigned int n)
 	char *p = dest;
 	char *q = src;
 
-	while (n >= i)
+	while (n > i)
 	{
 		p[i] = q[i];
 		i = i + 1;
