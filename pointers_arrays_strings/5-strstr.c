@@ -40,5 +40,9 @@ char *_strstr(char *haystack, char *needle)
 		}
 		i = i + 1;
 	}
+	if (len == 0)
+	{
+		return (haystack);
+	}
 	return (0);
 }
