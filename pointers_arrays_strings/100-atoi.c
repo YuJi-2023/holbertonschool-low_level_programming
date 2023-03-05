@@ -9,7 +9,7 @@ int _atoi(char *s)
 	int i = 0;
 	int sign = 0;
 	int digits = 0;
-	int result = 0;
+	unsigned int result = 0;
 	unsigned int power_of_ten = 1;
 
 	while (s[i] != '\0')
