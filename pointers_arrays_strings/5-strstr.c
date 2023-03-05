@@ -27,6 +27,10 @@ char *_strstr(char *haystack, char *needle)
 				{
 					digit = digit + 1;
 				}
+				else
+				{
+					break;
+				}
 				n = n + 1;
 			}
 			if (digit == len)
