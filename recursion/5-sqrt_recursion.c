@@ -2,32 +2,29 @@
 /**
  * _sqrt_calculate - to help calculate the square root of a number
  * @n: input number
- * @min: minimum value
- * @max: maximum value
+ * @root: the square root
+ *
  * Return: square root
  */
-int _sqrt_calculate(int n, int min, int max)
-{	int mid;
-
-	mid = (min + max) / 2;
-
-	if (min > max)
+int _sqrt_calculate(int root, int n)
+{
+	if (root % (n / root) == 0)
 	{
-		return (-1);
-	}
-	if (mid * mid == n)
-	{
-		return (mid);
-	}
-	else if (mid * mid < n)
-	{
-		return (_sqrt_calculate(n, mid + 1, max));
+		if (root * (n / root) == n)
+		{
+			return (root);
+		}
+		else
+		{
+			return (-1);
+		}
 	}
 	else
 	{
-		return (_sqrt_calculate(n, min, mid - 1));
+		return (_sqrt_calculate(root + 1, n));
 	}
 }
+
 /**
  * _sqrt_recursion - return the natural square root of a number
  * @n: input int
@@ -43,5 +40,5 @@ int _sqrt_recursion(int n)
 	{
 		return (n);
 	}
-	return (_sqrt_calculate(n, 1, n));
+	return (_sqrt_calculate(1, n));
 }
