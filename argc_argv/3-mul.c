@@ -8,7 +8,7 @@
  * @argc: count of total command line arguments
  * @argv: the array of character string of each command line argument
  * atoi: to convert string to int
- * Return: 0 success; if argc != 2, return 1 
+ * Return: 0 success; if argc != 2, return 1
  */
 int main(int argc, char *argv[])
 {
