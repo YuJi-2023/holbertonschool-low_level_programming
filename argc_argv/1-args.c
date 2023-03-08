@@ -16,6 +16,6 @@ int main(int argc, char *argv[])
 		argv[i] = argv[i + 1];
 		i = i + 1;
 	}
-	printf("%d\n",i - 1);
+	printf("%d\n", i - 1);
 	return (0);
 }
