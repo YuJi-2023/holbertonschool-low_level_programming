@@ -17,14 +17,11 @@ int **alloc_grid(int width, int height)
 	int num = 0;
 
 	if (width <= 0 || height <= 0)
-	{
 		return (NULL);
-	}
+
 	result = malloc(sizeof(int *) * height);
 	if (result == NULL)
-	{
 		return (NULL);
-	}
 	while (i < height)
 	{
 		result[i] = malloc(sizeof(int) * width);
@@ -39,7 +36,8 @@ int **alloc_grid(int width, int height)
 		}
 		i = i + 1;
 	}
-	i, j = 0;
+	i = 0;
+	j = 0;
 	while (i < height)
 	{
 		while (j < width)
