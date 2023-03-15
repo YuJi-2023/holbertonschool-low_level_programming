@@ -25,6 +25,7 @@ unsigned int _strlen(char *str)
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	unsigned int i;
+	unsigned int j;
 	char *result;
 
 	if (s1 == NULL)
@@ -37,17 +38,17 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (result == NULL)
 		return (NULL);
 	i = 0;
-	while (*s1 != '\0')
+	while (s1[i] != '\0')
 	{
-		result[i] = *s1;
+		result[i] = s1[i];
 		i = i + 1;
-		s1 = s1 + 1;
 	}
-	while (*s2 != '\0' && i <= (_strlen(s1) + n + 4))
+	j = 0;
+	while (s2[j] != '\0' && (i - 1) < (_strlen(s1) + n))
 	{
-		result[i] = *s2;
+		result[i] = s2[j];
 		i = i + 1;
-		s2 = s2 + 1;
+		j = j + 1;
 	}
 	result[i] = '\0';
 	return (result);
