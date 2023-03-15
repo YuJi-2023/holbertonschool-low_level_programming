@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdlib.h>
-#include <stdio.h>
 /**
  * _calloc - using malloc to create own calloc funtion
  *@nmemb: input number of elements of the array
@@ -18,7 +17,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		return (NULL);
 	}
 	i = 0;
-	while (i < size)
+	while (i < nmemb * size)
 	{
 		ptr[i] = 0;
 		i = i + 1;
