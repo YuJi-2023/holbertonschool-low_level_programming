@@ -7,13 +7,10 @@
  */
 unsigned int _strlen(char *str)
 {
-	unsigned int i;
+	unsigned int i = 0;
 
-	i = 0;
 	while (str[i] != '\0')
-	{
 		i = i + 1;
-	}
 	return (i);
 }
 /**
@@ -32,13 +29,22 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
-	if (n >= _strlen(s2))
-	{
+	if (n > _strlen(s2))
 		n = _strlen(s2);
-	}
 	result = malloc(sizeof(*result) * (_strlen(s1) + n + 1));
 	if (result == NULL)
 		return (NULL);
+	i = 0;
+	if (n == 0)
+	{
+		while (*s1 != '\0')
+		{
+			result[i] = *s1;
+			i = i + 1;
+			s1 = s1 + 1;
+		}
+		return (result);
+	}
 	i = 0;
 	while (*s1 != '\0')
 	{
