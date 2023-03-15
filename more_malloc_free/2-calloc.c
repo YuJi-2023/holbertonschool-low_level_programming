@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdio.h>
 /**
  * _calloc - using malloc to create own calloc funtion
  *@nmemb: input number of elements of the array
