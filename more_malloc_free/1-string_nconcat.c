@@ -44,7 +44,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		i = i + 1;
 	}
 	j = 0;
-	while (s2[j] != '\0' && (i - 1) < (_strlen(s1) + n))
+	while (s2[j] != '\0' && j < n && i < (_strlen(s1) + n))
 	{
 		result[i] = s2[j];
 		i = i + 1;
