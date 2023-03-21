@@ -22,11 +22,11 @@ int int_index(int *array, int size, int (*cmp)(int))
 	{
 		while (i < size)
 		{
-			while ((*cmp)(array[i]) == 0)
+			if ((*cmp)(array[i]) != 0)
 			{
-				i = i + 1;
+				return (i);
 			}
-			return (i);
+			i = i + 1;
 		}
 		return (-1);
 	}
