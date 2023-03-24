@@ -15,13 +15,13 @@ void print_strings(const char *separator, const unsigned int n, ...);
 typedef struct type
 {
 	char *type;
-	int (*f)(va_list i);
+	void (*f)(va_list i);
 } print_type;
 
-int print_char(va_list i);
-int print_int(va_list i);
-int print_float(va_list i);
-int print_string(va_list i);
+void print_char(va_list i);
+void print_int(va_list i);
+void print_float(va_list i);
+void print_string(va_list i);
 
 void print_all(const char * const format, ...);
 #endif

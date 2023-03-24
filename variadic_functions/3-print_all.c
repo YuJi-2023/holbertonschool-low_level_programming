@@ -4,39 +4,36 @@
 /**
  * print_char - print char -promoted type to int
  * @i: input paramter
- * Return: 0
+ * Return: no need
  */
-int print_char(va_list i)
+void print_char(va_list i)
 {
 	printf("%c", va_arg(i, int));
-	return (0);
 }
 /**
  * print_int - print int
  * @i: input paramter
- * Return: 0
+ * Return: no need
  */
-int print_int(va_list i)
+void print_int(va_list i)
 {
 	printf("%d", va_arg(i, int));
-	return (0);
 }
 /**
  * print_float - print float, promoted type to double
  * @i: input paramter
- * Return: 0
+ * Return: no need
  */
-int print_float(va_list i)
+void print_float(va_list i)
 {
 	printf("%f", va_arg(i, double));
-	return (0);
 }
 /**
  * print_string - print string, treat NULL as (nil)
  * @i: input paramter
- * Return: 0
+ * Return: no need
  */
-int print_string(va_list i)
+void print_string(va_list i)
 {
 	char *s;
 
@@ -44,10 +41,8 @@ int print_string(va_list i)
 	if (s == NULL)
 	{
 		printf("(nil)");
-		return (0);
 	}
 	printf("%s", s);
-	return (0);
 }
 
 /**
