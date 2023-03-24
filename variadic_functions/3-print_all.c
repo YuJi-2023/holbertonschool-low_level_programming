@@ -54,8 +54,8 @@ void print_all(const char * const format, ...)
 {
 	int count;
 	int i;
-	int firstprint;
 	va_list arg;
+	char *separator;
 	print_type ops[] = {
 		{"c", print_char},
 		{"i", print_int},
@@ -66,20 +66,17 @@ void print_all(const char * const format, ...)
 
 	va_start(arg, format);
 	count = 0;
-	firstprint = 0;
-	while (format[count] != '\0' && format != NULL)
+	separator = "";
+	while (format != NULL && format[count] != '\0')
 	{
 		i = 0;
 		while (ops[i].f != NULL)
 		{
 			if (format[count] == *(ops[i].type))
 			{
-				if (firstprint != 0)
-				{
-					printf(", ");
-				}
+				printf("%s", separator);
 				ops[i].f(arg);
-				firstprint = firstprint + 1;
+				separator = ", ";
 			}
 			i = i + 1;
 		}
