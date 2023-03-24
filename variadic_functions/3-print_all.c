@@ -3,7 +3,7 @@
 #include <stdio.h>
 /**
  * print_char - print char -promoted type to int
- * @i: input paramter
+ * @i: input paramter of type va_list
  * Return: no need
  */
 void print_char(va_list i)
@@ -12,7 +12,7 @@ void print_char(va_list i)
 }
 /**
  * print_int - print int
- * @i: input paramter
+ * @i: input paramter of type va_list
  * Return: no need
  */
 void print_int(va_list i)
@@ -21,7 +21,7 @@ void print_int(va_list i)
 }
 /**
  * print_float - print float, promoted type to double
- * @i: input paramter
+ * @i: input paramter of type va_list
  * Return: no need
  */
 void print_float(va_list i)
@@ -30,7 +30,7 @@ void print_float(va_list i)
 }
 /**
  * print_string - print string, treat NULL as (nil)
- * @i: input paramter
+ * @i: input paramter of type va_list
  * Return: no need
  */
 void print_string(va_list i)
@@ -54,6 +54,7 @@ void print_all(const char * const format, ...)
 {
 	int count;
 	int i;
+	int firstprint;
 	va_list arg;
 	print_type ops[] = {
 		{"c", print_char},
@@ -65,6 +66,7 @@ void print_all(const char * const format, ...)
 
 	va_start(arg, format);
 	count = 0;
+	firstprint = 0;
 	while (format[count] != '\0' && format != NULL)
 	{
 		i = 0;
@@ -72,8 +74,12 @@ void print_all(const char * const format, ...)
 		{
 			if (format[count] == *(ops[i].type))
 			{
+				if (firstprint != 0)
+				{
+					printf(", ");
+				}
 				ops[i].f(arg);
-				printf(", ");
+				firstprint = firstprint + 1;
 			}
 			i = i + 1;
 		}
