@@ -23,8 +23,9 @@ int sum_dlistint(dlistint_t *head)
 	sum = 0;
 	while (ptr->next != NULL)
 	{
-		ptr = ptr->next;
 		sum = sum + ptr->n;
+		ptr = ptr->next;
 	}
+	sum = sum + ptr->n;
 	return (sum);
 }
