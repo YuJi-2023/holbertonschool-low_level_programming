@@ -21,11 +21,10 @@ int sum_dlistint(dlistint_t *head)
 
 	ptr = head;
 	sum = 0;
-	while (ptr->next != NULL)
+	while (ptr != NULL)
 	{
 		sum = sum + ptr->n;
 		ptr = ptr->next;
 	}
-	sum = sum + ptr->n;
 	return (sum);
 }
