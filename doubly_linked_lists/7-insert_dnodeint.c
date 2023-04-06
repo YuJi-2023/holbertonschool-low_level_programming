@@ -45,15 +45,15 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	newp->next = NULL;
 	newp->n = n;
 	len = dlistint_len(*h);
+	if (idx == 0 && len == 0)
+        {
+		*h = newp;
+		return (*h);
+	}
 	if (idx >= len)
 	{
 		free(newp);
 		return (NULL);
-	}
-	if (idx == 0 && len == 0)
-	{
-		*h = newp;
-		return (newp);
 	}
 	ptr = *h;
 	while (idx > 1)
