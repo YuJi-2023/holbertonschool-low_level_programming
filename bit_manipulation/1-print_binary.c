@@ -8,31 +8,9 @@
  */
 void print_binary(unsigned long int n)
 {
-	int bit;
-	int binary;
-	int least;
-	int result[64];
-	int i;
-
-	bit = 1;
-	binary = 0;
-	i = 0;
-	if (n == 0)
-		_putchar('0');
-	while (n > 0)
+	if (n > 1)
 	{
-		least = n & 1;
-		result[i] = least;
-		binary = (binary << 1);
-		binary = binary | least;
-		n = (n >> 1);
-		bit = (bit << 1);
-		i = i + 1;
+		print_binary(n >> 1);
 	}
-
-	while (i > 0)
-	{
-		i = i - 1;
-		_putchar('0' + result[i]);
-	}
+	_putchar('0' + (n & 1));
 }
