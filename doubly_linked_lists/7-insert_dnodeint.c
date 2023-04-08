@@ -1,25 +1,24 @@
 #include "lists.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-
 /**
- * dlistint_len - a function that returns the number of elements in
- * in a double linked list
- * @h: input parameter of a pointer to a list
- * Return: the number of elements in the list
+ * create_new_node - a function that create a new node of a dlistint_t
+ * @n: input of the value of the new node
+ * return: pointer to the new created node
  */
-size_t dlistint_len(const dlistint_t *h)
+dlistint_t *create_new_node(int n)
 {
-	size_t count;
+	dlistint_t *new_node;
 
-	count = 0;
-	while (h != NULL)
+	new_node = malloc(sizeof(*new_node));
+	if (new_node == NULL)
 	{
-		h = h->next;
-		count = count + 1;
+		return (NULL);
 	}
-	return (count);
+	new_node->n = n;
+	new_node->next = NULL;
+	new_node->prev = NULL;
+	return (new_node);
 }
 
 /**
@@ -34,44 +33,44 @@ size_t dlistint_len(const dlistint_t *h)
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	size_t len;
 	dlistint_t *ptr;
 	dlistint_t *newp;
+	unsigned int count;
 
-	newp = malloc(sizeof(dlistint_t));
-	if (newp == NULL)
-		return (NULL);
-	newp->prev = NULL;
-	newp->next = NULL;
-	newp->n = n;
-	len = dlistint_len(*h);
-	if (idx == 0 && len == 0)
-        {
-		*h = newp;
-		return (*h);
-	}
-	if (idx >= len)
+	newp = create_new_node(n);
+	if (h == NULL || newp == NULL)
 	{
-		free(newp);
 		return (NULL);
 	}
 	ptr = *h;
-	while (idx > 1)
+	if (idx == 0)
 	{
+		*h = newp;
+		newp->next = ptr;
+		if (ptr != NULL)
+		{
+			ptr->prev = newp;
+		}
+		return (newp);
+	}
+	count = 1;
+	while (idx >= count)
+	{
+		if (ptr == NULL)
+		{
+			free(newp);
+			return (NULL);
+		}
+		newp->prev = ptr;
 		ptr = ptr->next;
-		idx = idx - 1;
+		count = count + 1;
 	}
-	if (ptr->next == NULL)
+	newp->prev->next = newp;
+	newp->next = ptr;
+
+	if (ptr != NULL)
 	{
-		ptr->next = newp;
-		newp->prev = ptr;
-	}
-	else
-	{
-		newp->prev = ptr;
-		newp->next = ptr->next;
-		ptr->next->prev = newp;
-		ptr->next = newp;
+		ptr->prev = newp;
 	}
 	return (newp);
 }
