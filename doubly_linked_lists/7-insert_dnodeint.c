@@ -4,7 +4,7 @@
 /**
  * create_new_node - a function that create a new node of a dlistint_t
  * @n: input of the value of the new node
- * return: pointer to the new created node
+ * Return: pointer to the new created node
  */
 dlistint_t *create_new_node(int n)
 {
