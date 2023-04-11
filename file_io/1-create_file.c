@@ -22,15 +22,19 @@ int create_file(const char *filename, char *text_content)
 	{
 		return (-1);
 	}
-	if (text_content != NULL)
+	if (text_content == NULL)
+	{
+		wr = write(fd, "", 0);
+	}
+	else
 	{
 		len = 0;
 		while (text_content[len] != '\0')
 		{
 			len = len + 1;
 		}
+		wr = write(fd, text_content, len);
 	}
-	wr = write(fd, text_content, len);
 	if (wr < 0)
 	{
 		close(fd);
