@@ -37,6 +37,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned int index;
 	unsigned long int size;
 
+	if (ht == NULL)
+		return (0);
+
 	new_element = create_element(key, value);
 	size = ht->size;
 	index = key_index((const unsigned char *)key, size);
