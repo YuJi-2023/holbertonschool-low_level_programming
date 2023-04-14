@@ -11,16 +11,14 @@ hash_node_t *create_element(const char *key, const char *value)
 {
 	hash_node_t *element;
 
-	if (key == NULL)
+	if (strlen(key) == 0)
 	{
 		return (NULL);
 	}
-	element = malloc(sizeof(hash_node_t));
-	element->key = malloc(strlen(key) + 1);
-	element->value = malloc(strlen(value) + 1);
+	element = malloc(sizeof(*element));
+	element->key = strdup(key);
+	element->value = strdup(value);
 	element->next = NULL;
-	strcpy(element->key, key);
-	strcpy(element->value, value);
 	return (element);
 }
 /**
@@ -35,14 +33,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *new_element;
 	hash_node_t *current_element;
 	unsigned int index;
-	unsigned long int size;
 
-	if (ht == NULL)
+	if (ht == NULL || key == NULL || value == NULL)
 		return (0);
 
 	new_element = create_element(key, value);
-	size = ht->size;
-	index = key_index((const unsigned char *)key, size);
+	index = key_index((const unsigned char *)key, ht->size);
 	current_element = ht->array[index];
 
 	if (current_element == NULL)
@@ -53,10 +49,11 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		if (strcmp(current_element->key, key) == 0)
 		{
+			free(current_element->value);
+			current_element->value = strdup(value);
 			free(new_element->key);
 			free(new_element->value);
 			free(new_element);
-			current_element->value = strdup(value);
 			return (1);
 		}
 		new_element->next = current_element;
