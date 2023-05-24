@@ -1,5 +1,20 @@
 #include "search_algos.h"
 /**
+  *cal_pos-calculate pos
+  *@low: low
+  *@high: hihg
+  *Return: pos
+  */
+size_t cal_pos(int *array, int value, size_t low, size_t high)
+{
+	size_t pos;
+
+	pos = low + (((double)(high - low) /
+		(array[high] - array[low])) * (value - array[low]));
+	return (pos);
+}
+
+/**
   *interpolation_search-search for a value in array of ints using interpolation
   *@array: the input array to be searched
   *@size: number of elements in the array
@@ -18,10 +33,14 @@ int interpolation_search(int *array, size_t size, int value)
 	}
 	low = 0;
 	high = size - 1;
+	pos = cal_pos(array, value, low, high);
+	if (pos >= size)
+	{
+		printf("Value checked array[%ld] is out of range\n", pos);
+	}
 	while (low <= high && value >= array[low] && value <= array[high])
 	{
-		pos = low + (((double)(high - low) /
-		(array[high] - array[low])) * (value - array[low]));
+		pos = cal_pos(array, value, low, high);
 		printf("Value checked array[%ld] = [%u]\n", pos, array[pos]);
 		if (array[pos] == value)
 			return (pos);
