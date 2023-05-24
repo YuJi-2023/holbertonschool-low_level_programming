@@ -1,6 +1,8 @@
 #include "search_algos.h"
 /**
   *cal_pos-calculate pos
+  *@array: pointer to array
+  *@value: int to be searched
   *@low: low
   *@high: hihg
   *Return: pos
